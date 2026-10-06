@@ -15,7 +15,7 @@ who the person is; the system still refuses anyone it hasn't enrolled.
 ## How it fits together
 
 ```
-Browser (public/)                       O.L.Y.M.P.U.S Firebase project (TEST: olympus-test · LIVE: olympus-live)
+Browser (public/)                       O.L.Y.M.P.U.S Firebase project (TEST: olympus-8d388 · LIVE: olympus-live)
  ├─ Firebase Auth: Google or email link ─▶ ID token
  └─ olympus callable ──────────────────▶ functions/index.js (Node 22, asia-southeast1)
                                            ├─ lib/identity.js  each domain signs in one way (same rules as the systems)

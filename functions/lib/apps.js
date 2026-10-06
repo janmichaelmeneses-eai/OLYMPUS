@@ -21,7 +21,7 @@ const APPS = {
 };
 
 /* Only these projects are TEST; any other project (a new LIVE one included) is LIVE. */
-const TEST_PROJECTS = ['olympus-test'];
+const TEST_PROJECTS = ['olympus-8d388'];
 const projectId = () => process.env.GCLOUD_PROJECT || process.env.GCP_PROJECT || (JSON.parse(process.env.FIREBASE_CONFIG || '{}').projectId) || '';
 function envName() {
   const p = projectId();
