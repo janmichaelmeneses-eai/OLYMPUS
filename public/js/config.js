@@ -1,7 +1,14 @@
 // Firebase web configs for O.L.Y.M.P.U.S. These values are not secrets: the olympus server function decides access.
 // Fill each in from Firebase console → Project settings → Your apps → Web app (docs/RUNBOOK.md, step 2).
 const PROJECTS = {
-  TEST: null,  // olympus-8d388
+  TEST: {  // olympus-8d388
+    apiKey: 'AIzaSyDAROoJoT2aUcwoP3WM1HR1bmt_IVVr-9A',
+    authDomain: 'olympus-8d388.firebaseapp.com',
+    projectId: 'olympus-8d388',
+    storageBucket: 'olympus-8d388.firebasestorage.app',
+    messagingSenderId: '1028231305120',
+    appId: '1:1028231305120:web:149eea95e5a03c7cd0b6c5',
+  },
   LIVE: null,  // olympus-live
 };
 const host = location.hostname;
