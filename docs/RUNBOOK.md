@@ -1,8 +1,8 @@
 # O.L.Y.M.P.U.S runbook
 
 ## 1. Create the Firebase project (once per environment)
-1. https://console.firebase.google.com → **Add project**: `olympus-test` for TEST (later `olympus-live` for LIVE).
-   Only `olympus-test` is TEST (`TEST_PROJECTS` in `functions/lib/apps.js`); any other project is LIVE.
+1. https://console.firebase.google.com → **Add project**: TEST is `olympus-8d388` (created 2026-10-06); LIVE will be `olympus-live`.
+   Only `olympus-8d388` is TEST (`TEST_PROJECTS` in `functions/lib/apps.js`); any other project is LIVE.
 2. Upgrade to the **Blaze** plan (server functions and Secret Manager need it). Set a budget alert.
 3. **Firestore Database → Create database**, production mode, location **asia-southeast1**.
 4. **Authentication → Sign-in method**: turn on **Google**, and **Email/Password** with **Email link (passwordless
@@ -38,7 +38,7 @@ people are unaffected.
 cd functions && npm install && npm test && cd ..
 npx firebase-tools deploy --only functions,hosting,firestore
 ```
-The address is `https://olympus-test.web.app` (TEST). Each system's website must include the O.L.Y.M.P.U.S handover
+The address is `https://olympus-8d388.web.app` (TEST). Each system's website must include the O.L.Y.M.P.U.S handover
 (`#olympus=` and `#olympus-hint=`) and its server must accept `olympus: true` tokens (CR-016 follow-up, merged).
 
 ## 4. Adding a system

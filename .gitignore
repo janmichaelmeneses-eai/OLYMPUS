@@ -3,7 +3,6 @@ node_modules/
 firebase-debug*.log
 *.log
 .DS_Store
-.firebaserc
 # secrets: the systems' service account keys live only in Secret Manager (SYSTEM_SERVICE_ACCOUNTS), never in git
 .env
 .env.*

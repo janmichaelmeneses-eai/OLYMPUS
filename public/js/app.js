@@ -10,13 +10,19 @@ const store = { get: (k) => { try { return localStorage.getItem(k) || ''; } catc
 function show(html) { view.innerHTML = html; }
 function message(text, kind = 'warn') { const m = $('#msg'); if (m) { m.textContent = text; m.className = 'msg ' + kind; m.hidden = !text; } }
 
+/* on Firebase Hosting the project's own settings are served at /__/firebase/init.json; config.js covers local runs */
+async function hostedConfig() {
+  try { const r = await fetch('/__/firebase/init.json'); return r.ok ? await r.json() : null; } catch { return null; }
+}
+
 async function boot() {
   $('#env').textContent = ENV === 'TEST' ? 'Test environment' : '';
-  if (!firebaseConfig) return show('<p class="msg warn">This site is not connected to Firebase yet. See docs/RUNBOOK.md.</p>');
+  const config = (await hostedConfig()) || firebaseConfig;
+  if (!config) return show('<p class="msg warn">This site is not connected to Firebase yet. See docs/RUNBOOK.md.</p>');
   const [{ initializeApp }, A, F] = await Promise.all([
     import(`${FIREBASE_SDK}/firebase-app.js`), import(`${FIREBASE_SDK}/firebase-auth.js`), import(`${FIREBASE_SDK}/firebase-functions.js`),
   ]);
-  const app = initializeApp(firebaseConfig);
+  const app = initializeApp(config);
   const auth = A.getAuth(app);
   const call = F.httpsCallable(F.getFunctions(app, REGION), 'olympus');
   const api = async (data) => (await call(data)).data;
