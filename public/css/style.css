@@ -1,0 +1,22 @@
+:root { --bg: #f6f7f9; --card: #fff; --ink: #14213d; --muted: #5b6475; --line: #d9dde5; --brand: #14213d; --gold: #c9a227; --warn: #a33; --ok: #2d6a4f; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0e1424; --card: #172036; --ink: #e8ecf4; --muted: #9aa4b8; --line: #2a3550; --brand: #c9a227; --gold: #c9a227; --warn: #f08a8a; --ok: #7fd1a8; } }
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--ink); }
+header { padding: 24px 16px 8px; max-width: 720px; margin: 0 auto; }
+h1 { margin: 0; letter-spacing: .12em; font-size: 24px; border-bottom: 3px solid var(--gold); display: inline-block; }
+main { max-width: 720px; margin: 0 auto; padding: 16px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 24px; display: grid; gap: 12px; max-width: 420px; }
+h2 { margin: 0 0 8px; font-size: 20px; }
+label { font-weight: 600; font-size: 14px; }
+input { font: inherit; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); }
+.btn { font: inherit; padding: 8px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
+.btn.primary { background: var(--brand); color: var(--bg); border-color: var(--brand); font-weight: 600; padding: 10px 14px; }
+.btn:disabled, .tile:disabled { opacity: .55; cursor: default; }
+.muted, .hint { color: var(--muted); } .hint { font-size: 13px; }
+.msg { margin: 0; font-size: 14px; } .msg.warn { color: var(--warn); } .msg.ok { color: var(--ok); }
+.env { display: inline-block; margin-top: 4px; font-size: 12px; color: var(--warn); }
+.who { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 12px; }
+.tile { text-align: left; display: grid; gap: 4px; padding: 16px; border-radius: 12px; border: 1px solid var(--line); background: var(--card); color: var(--ink); font: inherit; cursor: pointer; border-top: 4px solid var(--gold); }
+.tile b { letter-spacing: .08em; } .tile span { color: var(--muted); font-size: 14px; } .tile em { font-size: 12px; color: var(--muted); }
+.tile:not(:disabled):hover { border-color: var(--gold); }
