@@ -1,0 +1,12 @@
+{
+  "name": "olympus-functions",
+  "private": true,
+  "description": "O.L.Y.M.P.U.S server: checks who is signed in and hands them over to VALKYRIE, Z.E.U.S or HERMES.",
+  "main": "index.js",
+  "engines": { "node": "22" },
+  "dependencies": {
+    "firebase-admin": "^12.7.0",
+    "firebase-functions": "^6.1.0"
+  },
+  "scripts": { "test": "node --test test/*.test.js" }
+}

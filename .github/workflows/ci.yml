@@ -1,0 +1,17 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: No keys in the repo
+        run: "! git ls-files | xargs grep -l '\"private_key\"' 2>/dev/null"
+      - name: Server tests
+        working-directory: functions
+        run: npm install --no-audit --no-fund && npm test
